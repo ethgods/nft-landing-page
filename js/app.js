@@ -78,18 +78,14 @@ function updateStatusText(isOwner, checking) {
   const statusText = document.querySelector('.owner-status');
   if(checking) {
     if(isOwner) {
-      document.write ("<br>");
       statusText.innerText = `You do own ${COLLECTION_NAME}!! 🐻Let's see how many${renderDots(dots)}`;
     } else {
-      document.write ("<br>");
       statusText.innerText = `Checking to see if you own any ${COLLECTION_NAME} 🐻${renderDots(dots)}`;
     }
   } else {
     if(isOwner) {
-      document.write ("<br>");
       statusText.innerText = `You own ${editions.length} ${COLLECTION_NAME}!! 🐻`;
     } else {
-      document.write ("<br>");
       statusText.innerText = `You don't own any ${COLLECTION_NAME} 🐻`;
     }
   }
