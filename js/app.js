@@ -46,6 +46,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
 const checkOwner = async (account) => {
   if(account) {
     let isOwner = false;
@@ -74,7 +75,7 @@ const checkOwner = async (account) => {
   }
 }
 
-function updateStatusText(isOwner, checking) {
+/* function updateStatusText(isOwner, checking) {
   const statusText = document.querySelector('.owner-status');
   if(checking) {
     if(isOwner) {
@@ -91,14 +92,16 @@ function updateStatusText(isOwner, checking) {
   }
   dots = dots === 3 ? 1 : dots + 1;
 }
+ */
+/*  */
 
-function renderDots(dots) {
+/* function renderDots(dots) {
   let dotsString = '';
   for (let i = 0; i < dots; i++) {
     dotsString += '.';
   }
   return dotsString;
-}
+} */
 
 function timer(ms) {
   return new Promise(res => setTimeout(res, ms));
