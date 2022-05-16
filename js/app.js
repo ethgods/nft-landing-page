@@ -127,10 +127,9 @@ async function checkChain() {
 
 async function loadInfo() {
   window.info = await contract.methods.currentTokenId().call();
-  window.mintPrice = 0.000;//await contract.methods.getPrice(1).call();
+  window.mintPrice = 0.015;//await contract.methods.getPrice(1).call();
   // console.log('currentTokenId: ' + window.info);
-  // let getNextTokenId = await contract.methods.getNextTokenId().call();
-  // console.log('getNextTokenId: ' + getNextTokenId);
+
   let totalSupplyOnchain = await contract.methods.totalSupply().call();
   // console.log('totalSupply: ' + totalSupplyOnchain);
   const publicMintActive = true; //await contract.methods.mintingActive().call();
@@ -286,7 +285,7 @@ async function mint() {
   mintButton.innerHTML = spinner;
 
   const amount = parseInt(document.getElementById("mintInput").value);
-  const value = 0.000 * amount;
+  const value = 0.015 * amount;
   const publicMintActive = true; //await contract.methods.mintingActive().call();
   const presaleMintActive = true; //await contract.methods.presaleActive().call();
 
