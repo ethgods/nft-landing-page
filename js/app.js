@@ -27,7 +27,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 });
 
 const updateConnectStatus = async () => {
-  console.log('updateConnectStatus');
   const onboarding = new MetaMaskOnboarding();
   const onboardButton = document.getElementById("connectWallet");
   const notConnected = document.querySelector('.not-connected');
@@ -129,11 +128,11 @@ async function checkChain() {
 async function loadInfo() {
   window.info = await contract.methods.currentTokenId().call();
   window.mintPrice = 0.015;//await contract.methods.getPrice(1).call();
-  console.log('currentTokenId: ' + window.info);
-  let getNextTokenId = await contract.methods.getNextTokenId().call();
-  console.log('getNextTokenId: ' + getNextTokenId);
+  // console.log('currentTokenId: ' + window.info);
+  // let getNextTokenId = await contract.methods.getNextTokenId().call();
+  // console.log('getNextTokenId: ' + getNextTokenId);
   let totalSupplyOnchain = await contract.methods.totalSupply().call();
-  console.log('totalSupply: ' + totalSupplyOnchain);
+  // console.log('totalSupply: ' + totalSupplyOnchain);
   const publicMintActive = true; //await contract.methods.mintingActive().call();
   const presaleMintActive = true;// await contract.methods.presaleActive().call();
   const mainHeading = document.getElementById("mainHeading");
@@ -141,6 +140,8 @@ async function loadInfo() {
   const mainText = document.getElementById("mainText");
   const actionButton = document.getElementById("actionButton");
   const mintContainer = document.getElementById("mintContainer");
+  const mintedCounter = document.getElementById("mintedCounter");
+  mintedCounter.innerText = totalSupplyOnchain+'/10000 minted';
   const mintButton = document.getElementById("mintButton");
   const spinner = document.getElementById("spinner");
   const price = window.mintPrice; //web3.utils.fromWei(window.mintPrice, 'ether');
@@ -239,7 +240,7 @@ async function loadInfo() {
   };
   setQtyMax.onclick = () => {
     mintInput.value = max;
-    console.log(max);
+    // console.log(max);
     setTotalPrice()
   };
   mintInput.onchange = () => {
@@ -291,7 +292,6 @@ async function mint() {
 
   if (publicMintActive) {
     // PUBLIC MINT
-    console.log('PUBLIC MINT');
     try {
       const mintTransaction = await contract.methods
         .mintToMultiple(window.address, amount.toString())
