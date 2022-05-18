@@ -213,9 +213,9 @@ async function loadInfo() {
   const mintInput = document.getElementById("mintInput");
   
   // pricePerMint.innerText = `${price} ${priceType}`;
-  // maxPerMint.innerText = `${20}`;
+  // maxPerMint.innerText = `${5}`;
   // totalSupply.innerText = `${info.deploymentConfig.maxSupply}`;
-  mintInput.setAttribute("max", 20);
+  mintInput.setAttribute("max", 5);
 
   // MINT INPUT
   const mintIncrement = document.getElementById("mintIncrement");
@@ -258,7 +258,7 @@ function setTotalPrice() {
   const mintInputValue = parseInt(mintInput.value);
   const totalPrice = document.getElementById("totalPrice");
   const mintButton = document.getElementById("mintButton");
-  if(mintInputValue < 1 || mintInputValue > 20) {
+  if(mintInputValue < 1 || mintInputValue > 5) {
     totalPrice.innerText = 'INVALID QUANTITY';
     mintButton.disabled = true;
     mintInput.disabled = true;
