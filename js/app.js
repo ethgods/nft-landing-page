@@ -213,9 +213,9 @@ async function loadInfo() {
   const mintInput = document.getElementById("mintInput");
   
   // pricePerMint.innerText = `${price} ${priceType}`;
-  // maxPerMint.innerText = `${20}`;
+  // maxPerMint.innerText = `${5}`;
   // totalSupply.innerText = `${info.deploymentConfig.maxSupply}`;
-  mintInput.setAttribute("max", 20);
+  mintInput.setAttribute("max", 5);
 
   // MINT INPUT
   const mintIncrement = document.getElementById("mintIncrement");
